@@ -1,0 +1,36 @@
+Example 1:
+Input: N = 6, array[] = {13,46,24,52,20,9}
+Output: 9,13,20,24,46,52
+Explanation: After sorting the array is: 9, 13, 20, 24, 46, 5
+
+Approach--------------------------------------------------------------------------------------------------------------------->
+
+The algorithm steps are as follows:
+
+First, we will select the range of the unsorted array using a loop (say i) that indicates the starting index of the range.
+The loop will run forward from 0 to n-1. The value i = 0 means the range is from 0 to n-1, and similarly, i = 1 means the range is from 1 to n-1, and so on.
+(Initially, the range will be the whole array starting from the first index.)
+Now, in each iteration, we will select the minimum element from the range of the unsorted array using an inner loop.
+After that, we will swap the minimum element with the first element of the selected range(in step 1). 
+Finally, after each iteration, we will find that the array is sorted up to the first index of the range. 
+Note: Here, after each iteration, the array becomes sorted up to the first index of the range. That is why the starting index of the range increases by 1 after each iteration. This increment is achieved by the outer loop and the starting index is represented by variable i in the following code. And the inner loop(i.e. j) helps to find the minimum element of the range [i…..n-1].
+
+Number of comparisons: (n - 1) + (n - 2) + (n - 3) + ..... + 1 = n(n - 1) / 2 nearly equals to n2.
+
+Complexity = O(n2)
+
+Also, we can analyze the complexity by simply observing the number of loops. There are 2 loops so the complexity is n*n = n2.
+
+Time Complexities:
+
+Worst Case Complexity: O(n2)
+If we want to sort in ascending order and the array is in descending order then, the worst case occurs.
+Best Case Complexity: O(n2)
+It occurs when the array is already sorted
+Average Case Complexity: O(n2)
+It occurs when the elements of the array are in jumbled order (neither ascending nor descending).
+The time complexity of the selection sort is the same in all cases. At every step, you have to find the minimum element and put it in the right place. The minimum element is not known until the end of the array is not reached.
+
+Space Complexity:
+
+Space complexity is O(1) because an extra variable temp is used.
